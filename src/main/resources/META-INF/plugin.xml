@@ -1,18 +1,55 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.radgospodinov.reminderintellijplatformplugin</id>
-    <name>IntelliJ Platform Plugin reminder-intellij-platform-plugin</name>
-    <vendor>radgospodinov</vendor>
+    <id>com.github.radgospodinov.plugin.reminder</id>
+    <name>Remind Me</name>
+    <vendor email="rad.gospodinov@gmail.com" url="https://github.com/radgospodinov">Radoslav Gospodinov</vendor>
+    <description>
+        Simple reminder heavily continuation of and heavily inspired by bla bla bla making it more than 40 chars
+    </description>
 
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.radgospodinov.reminderintellijplatformplugin.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.radgospodinov.reminderintellijplatformplugin.services.MyProjectService"/>
+        <postStartupActivity implementation="com.github.radgospodinov.plugin.reminder.OnStartup"/>
+
+        <applicationService
+            serviceImplementation="com.github.radgospodinov.plugin.reminder.store.ReminderPersistentStore"/>
+
+        <toolWindow factoryClass="com.github.radgospodinov.plugin.reminder.ui.tool.ReminderToolWindowFactory"
+                    id="Reminders" secondary="true" icon="AllIcons.Toolwindows.ToolWindowTodo" anchor="right"/>
+
+        <notificationGroup displayType="BALLOON" id="Reminder Error Notification Group"/>
+        <notificationGroup displayType="STICKY_BALLOON" id="Reminder Notification Group"/>
     </extensions>
 
-    <applicationListeners>
-        <listener class="com.github.radgospodinov.reminderintellijplatformplugin.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
+    <actions>
+        <group id="org.intellij.sdk.action.GroupedActions" text="Remind Me About This" popup="true"
+               icon="AllIcons.Vcs.History">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            <action id="Reminder.Add.Editor.Tomorrow"
+                    class="com.github.radgospodinov.plugin.reminder.action.TomorrowReminder"
+                    text="Tomorrow"
+                    description="Create reminder"/>
+            <action id="Reminder.Add.Editor.NextWeek"
+                    class="com.github.radgospodinov.plugin.reminder.action.NextWeekReminder"
+                    text="Next Week"
+                    description="Create reminder"/>
+            <action id="Reminder.Add.Editor.20.Minutes"
+                    class="com.github.radgospodinov.plugin.reminder.action.TwentyMinutesReminder"
+                    text="in 20 Minutes"
+                    description="Create reminder"/>
+            <action id="Reminder.Add.Editor.1.Hours"
+                    class="com.github.radgospodinov.plugin.reminder.action.OneHourReminder"
+                    text="in 1 Hour"
+                    description="Create reminder"/>
+            <action id="Reminder.Add.Editor.3.Hours"
+                    class="com.github.radgospodinov.plugin.reminder.action.ThreeHourReminder"
+                    text="in 3 Hours"
+                    description="Create reminder"/>
+            <action id="Reminder.Add.Editor.Custom"
+                    class="com.github.radgospodinov.plugin.reminder.action.DatePickerReminder"
+                    text="Custom"
+                    description="Create reminder"/>
+        </group>
+    </actions>
 </idea-plugin>

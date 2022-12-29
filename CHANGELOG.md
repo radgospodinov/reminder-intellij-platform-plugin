@@ -1,7 +1,24 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
 
-# reminder-intellij-platform-plugin Changelog
+# Remind Me Changelog
 
-## [Unreleased]
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [0.4.0] - 2022-12-29
+
 ### Added
-- Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
+
+- Support for IntelliJ-based IDEs up-to version 2022.3.*
+- Location column to the reminder table
+- Mute functionality with an option to unmute
+- Minutes incremental and decremental buttons to date/time picker dialog
+
+### Changed
+
+- Predefined colors to match JetBrains' colors
+- Predefined timeframes to match Slack's options
+
+### Fixed
+
+- Color picker now displays the selected item color

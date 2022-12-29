@@ -1,1 +1,1 @@
-rootProject.name = "reminder-intellij-platform-plugin"
+rootProject.name = "Remind Me"
