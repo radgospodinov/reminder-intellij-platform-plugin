@@ -14,10 +14,10 @@ internal object OpenReminderAnchor {
     fun execute(id: String) {
         val reminder = ReminderStore.instance.reminderById(id) ?: return
         val project = getCurrentProject() ?: return
-        val file = VirtualFileManager.getInstance().findFileByUrl(reminder.locationUrl) ?: return
+        val file = VirtualFileManager.getInstance().findFileByUrl(reminder.fileInfo.systemUri) ?: return
 
         try {
-            val openFileDescriptor = OpenFileDescriptor(project, file, reminder.offset)
+            val openFileDescriptor = OpenFileDescriptor(project, file, reminder.fileInfo.offset) //
             FileEditorManager.getInstance(project).openTextEditor(openFileDescriptor, true)
         } catch (ignore: IllegalArgumentException) {
         }

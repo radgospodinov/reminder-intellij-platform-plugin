@@ -5,7 +5,6 @@ import com.github.radgospodinov.plugin.reminder.ui.color.HighlightColor
 import com.github.radgospodinov.plugin.reminder.utility.formatTimestamp
 import com.intellij.ui.JBColor
 import java.awt.Component
-import java.io.File
 import java.time.format.FormatStyle
 import javax.swing.JTable
 import javax.swing.border.LineBorder
@@ -57,7 +56,11 @@ internal class ReminderCellRenderer(
             border = LineBorder(table.selectionBackground, 2, false)
         }
 
-        toolTipText = value.toString()
+        toolTipText = if (colIndex == ReminderTableModel.LOCATION_INDEX) {
+            reminder.fileInfo.presentableUri
+        } else {
+            value.toString()
+        }
 
         return this
     }
@@ -87,7 +90,7 @@ internal class ReminderTableModel : DefaultTableModel(columnNames, 0) {
             val id = entry.key
             val reminder = entry.value
             arrayOf<Any>(
-                reminder.locationUrl.split(File.separatorChar).last(),
+                reminder.fileInfo.name,
                 reminder.timestamp,
                 reminder.message,
                 id

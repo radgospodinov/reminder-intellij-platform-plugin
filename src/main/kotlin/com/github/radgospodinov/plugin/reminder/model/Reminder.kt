@@ -3,8 +3,7 @@ package com.github.radgospodinov.plugin.reminder.model
 import com.github.radgospodinov.plugin.reminder.ui.color.HighlightColor
 
 internal data class Reminder(
-    val locationUrl: String,
-    val offset: Int,
+    val fileInfo: FileInfo,
     val message: String,
     val timestamp: Long,
     val muted: Boolean = false,

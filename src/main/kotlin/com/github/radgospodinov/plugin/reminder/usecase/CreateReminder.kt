@@ -1,5 +1,6 @@
 package com.github.radgospodinov.plugin.reminder.usecase
 
+import com.github.radgospodinov.plugin.reminder.model.FileInfo
 import com.github.radgospodinov.plugin.reminder.model.Reminder
 import com.github.radgospodinov.plugin.reminder.store.ReminderStore
 import com.github.radgospodinov.plugin.reminder.ui.notification.ErrorNotification
@@ -21,8 +22,12 @@ internal object CreateReminder {
         val editor: Editor = actionEvent.getRequiredData(CommonDataKeys.EDITOR)
 
         val reminder = Reminder(
-            locationUrl = file.virtualFile.url,
-            offset = editor.caretModel.offset,
+            FileInfo(
+                file.virtualFile.name,
+                file.virtualFile.presentableUrl,
+                file.virtualFile.url,
+                editor.caretModel.offset
+            ),
             message = text,
             timestamp = timestamp,
         )
