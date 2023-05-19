@@ -28,7 +28,7 @@ internal class ReminderDataMapper {
             reminder.fileInfo.name,
             reminder.fileInfo.presentableUri,
             reminder.fileInfo.systemUri,
-            reminder.fileInfo.offset.toString(), //
+            reminder.fileInfo.offset.toString(),
             reminder.message,
             reminder.timestamp.toString(),
             reminder.muted.toString(),
