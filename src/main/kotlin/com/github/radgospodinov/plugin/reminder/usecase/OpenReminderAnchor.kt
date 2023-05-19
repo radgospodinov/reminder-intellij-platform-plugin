@@ -17,7 +17,7 @@ internal object OpenReminderAnchor {
         val file = VirtualFileManager.getInstance().findFileByUrl(reminder.fileInfo.systemUri) ?: return
 
         try {
-            val openFileDescriptor = OpenFileDescriptor(project, file, reminder.fileInfo.offset) //
+            val openFileDescriptor = OpenFileDescriptor(project, file, reminder.fileInfo.offset)
             FileEditorManager.getInstance(project).openTextEditor(openFileDescriptor, true)
         } catch (ignore: IllegalArgumentException) {
         }

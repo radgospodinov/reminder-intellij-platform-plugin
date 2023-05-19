@@ -171,7 +171,7 @@ internal class ReminderToolWindow {
     }
 
     fun initToolWindow(toolWindow: ToolWindow) {
-        val contentFactory: ContentFactory = ContentFactory.SERVICE.getInstance()
+        val contentFactory: ContentFactory = ContentFactory.getInstance()
         val content: Content = contentFactory.createContent(windowContent, "", false)
         toolWindow.contentManager.addContent(content)
     }
