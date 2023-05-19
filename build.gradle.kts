@@ -7,15 +7,15 @@ plugins {
     // Java support
     id("java")
     // Kotlin support
-    id("org.jetbrains.kotlin.jvm") version "1.7.21"
+    id("org.jetbrains.kotlin.jvm") version "1.8.20"
     // Gradle IntelliJ Plugin
-    id("org.jetbrains.intellij") version "1.11.0"
+    id("org.jetbrains.intellij") version "1.13.3"
     // Gradle Changelog Plugin
     id("org.jetbrains.changelog") version "2.0.0"
     // Gradle Qodana Plugin
     id("org.jetbrains.qodana") version "0.1.13"
     // Gradle Kover Plugin
-    id("org.jetbrains.kotlinx.kover") version "0.6.1"
+    id("org.jetbrains.kotlinx.kover") version "0.7.0"
 }
 
 group = properties("pluginGroup")
@@ -33,7 +33,7 @@ dependencies {
 
 // Set the JVM language level used to build project. Use Java 11 for 2020.3+, and Java 17 for 2022.2+.
 kotlin {
-    jvmToolchain(11)
+    jvmToolchain(17)
 }
 
 // Configure Gradle IntelliJ Plugin - read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
@@ -61,8 +61,12 @@ qodana {
 }
 
 // Configure Gradle Kover Plugin - read more: https://github.com/Kotlin/kotlinx-kover#configuration
-kover.xmlReport {
-    onCheck.set(true)
+koverReport {
+    defaults {
+        xml {
+            onCheck = true
+        }
+    }
 }
 
 tasks {
