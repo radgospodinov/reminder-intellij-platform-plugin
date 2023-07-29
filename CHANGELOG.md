@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- The Maximum supported version is removed
+
+This might lead to incompatibilities with future versions, but won't require maintenance for each new version of IDEA.
+Updating the platform version once a year would minimize the chance for such incompatibilities.
+
 ## [0.6.0] - 2023-05-19
 
 ### Changed
