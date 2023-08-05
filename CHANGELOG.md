@@ -6,10 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.6.1] - 2023-07-29
+## [0.6.2] - 2023-08-06
 
 ### Changed
-- Now supports 2023.2.* 
+- Now supports 2023.2.*
+
+## [0.6.1] - 2023-07-29
 
 ### Changed
 - The Maximum supported version is removed
@@ -46,7 +48,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Color picker now displays the selected item color
 
-[Unreleased]: https://github.com/radgospodinov/reminder-intellij-platform-plugin/compare/v0.6.1...HEAD
+[Unreleased]: https://github.com/radgospodinov/reminder-intellij-platform-plugin/compare/v0.6.2...HEAD
+[0.6.2]: https://github.com/radgospodinov/reminder-intellij-platform-plugin/compare/v0.6.1...v0.6.2
 [0.6.1]: https://github.com/radgospodinov/reminder-intellij-platform-plugin/compare/v0.6.0...v0.6.1
 [0.6.0]: https://github.com/radgospodinov/reminder-intellij-platform-plugin/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/radgospodinov/reminder-intellij-platform-plugin/compare/v0.4.0...v0.5.0
