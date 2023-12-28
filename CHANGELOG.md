@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.3] - 2023-12-28
+
 ### Changed
 - Now supports 2023.3.*
 
@@ -51,7 +53,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Color picker now displays the selected item color
 
-[Unreleased]: https://github.com/radgospodinov/reminder-intellij-platform-plugin/compare/v0.6.2...HEAD
+[Unreleased]: https://github.com/radgospodinov/reminder-intellij-platform-plugin/compare/v0.6.3...HEAD
+[0.6.3]: https://github.com/radgospodinov/reminder-intellij-platform-plugin/compare/v0.6.2...v0.6.3
 [0.6.2]: https://github.com/radgospodinov/reminder-intellij-platform-plugin/compare/v0.6.1...v0.6.2
 [0.6.1]: https://github.com/radgospodinov/reminder-intellij-platform-plugin/compare/v0.6.0...v0.6.1
 [0.6.0]: https://github.com/radgospodinov/reminder-intellij-platform-plugin/compare/v0.5.0...v0.6.0
