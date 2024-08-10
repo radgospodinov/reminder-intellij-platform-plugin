@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Changed
+- Removed support for 2022.* versions
+- Switch to the latest intellij plugin platform
+
+## [0.6.5] - 2024-11-08
+
+### Changed
 - Now supports 2024.2.*
 
 ## [0.6.4] - 2024-03-06
